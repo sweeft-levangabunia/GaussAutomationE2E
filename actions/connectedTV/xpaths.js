@@ -1,7 +1,7 @@
 const xpaths = {
     ConnectedTVSection: `//span[normalize-space()='Gauss for Connected TV']`,
-    ConnectedTVSectionArrow: `//div[@id="app"]/div/main/div[1]/div/ul/li[8]/div`,
-    ConnectedTVMenuDropdown: `//div[@id="app"]/div/main/div[1]/div/ul/div[6]`,
+    ConnectedTVSectionArrow: `//li[normalize-space()='Gauss for Connected TV']//div[@class='MuiBox-root css-1l5qkav']`,
+    ConnectedTVMenuDropdown: `//div[@class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-unbudi"]`,
     ConnectedTVDNLTV: `//span[normalize-space()='DNLTV']`,
     ConnectedTVDNLTVText: `//h4[normalize-space()='Gauss for Connected TV: DNLTV']`,
     ConnectedTVReporter: `//span[normalize-space()='Reporting']`,
@@ -135,7 +135,6 @@ const xpaths = {
     ConnectedTVCreateSuccesMSG: `//div[@role='alert']`,
     ConnectedTVCreateSuccesMSGClose: `//*[name()='path' and contains(@d,'M7.172 5.7')]`,
 
-    iFrame: `#app iframe`,
     ShowClass: `hidden`,
     Class: `class`,
     SuccesMSG: 'Saved Successfully',

@@ -1,16 +1,14 @@
 import xpaths from "./xpaths";
 const sprintf = require('sprintf-js').sprintf
 const config = require('../../config/config');
-
+const url = require('../../config/url');
 
 export async function Open(page) {
-    let className;
-
     await page.waitForSelector(xpaths.ConnectedTVSection, xpaths.VisibleState);
 
-    className = await page.locator(xpaths.ConnectedTVMenuDropdown).getAttribute(xpaths.Class);
+    let exist = await page.locator(xpaths.ConnectedTVMenuDropdown).isVisible();
 
-    if (className.includes(xpaths.ShowClass)) {
+    if (!exist) {
         await page.locator(xpaths.ConnectedTVSectionArrow).click();
         await page.locator(xpaths.ConnectedTVReporter).click();
     } else {
@@ -21,8 +19,8 @@ export async function Open(page) {
 }
 
 export async function CreatePlanning(page, reportedModel) {
-    const frame = await page.frameLocator(xpaths.iFrame)
-    const frameHandle = await page.waitForSelector(xpaths.iFrame)
+    const frame = await page.frameLocator(url.Iframe(config))
+    const frameHandle = await page.waitForSelector(url.Iframe(config))
     const frameWait = await frameHandle.contentFrame()
 
     await frame.locator(xpaths.ConnectedTVCreateNew).click()
