@@ -11,7 +11,7 @@ ReportingModel.Name = config.prefixGauss + Date.now()
 UpdatedReportingModel.Name = "updated" + config.prefixGauss + Date.now()
 
 test('Test Reporter', async ({page}) => {
-    // test.setTimeout(config.timeout)
+    test.setTimeout(config.timeout)
     await test.step("Login", async () => {
         await Login(page, config);
     })

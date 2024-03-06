@@ -1,4 +1,5 @@
 import xpaths from "./xpaths";
+const url = require('../../config/url');
 
 
 export async function Open(page) {
@@ -20,8 +21,8 @@ export async function Open(page) {
 }
 
 export async function CreateSimulator(page, DNLTVModel) {
-    const frame = await page.frameLocator(xpaths.iFrame)
-    const frameHandle = await page.waitForSelector(xpaths.iFrame)
+    const frame = await page.frameLocator(url.Iframe(config))
+    const frameHandle = await page.waitForSelector(url.Iframe(config))
     const frameWait = await frameHandle.contentFrame()
 
     await frame.locator(xpaths.ConnectedTVCreateNew).click()
