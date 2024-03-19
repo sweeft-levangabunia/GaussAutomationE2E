@@ -4,7 +4,7 @@ const xpaths = {
     LoginButton: `//button[normalize-space()='Sign In']`,
     LoginPendoButton: `//a[@href='/']//*[name()='svg']`,
 
-    SessionMenuDropdown: `//div[@id="app"]//div[contains(@class, "MuiAvatar-root")]`,
+    SessionMenuDropdown: `//button[@aria-label='Open Settings']`,
     SessionMenuLogoutLink: `//p[normalize-space()='Logout']`,
 
     VisibleState: `{state: "visible"}`,

@@ -1,6 +1,6 @@
 const config = {
     domain: "https://dev.ms1222.net",
-    timeout: 1200000,
+    timeout: 900000,
     displayHeight: 700,
     displayWidth: 1500,
     prefixGauss: "e2eAutomation",

@@ -54,12 +54,12 @@ export async function CreatePlanning(page, reportedModel) {
     await frame.locator(xpaths.ConnectedTVCreatePlanningEstimatedReach).fill(reportedModel.EstimatedReach)
     await frame.locator(xpaths.ConnectedTVCreateNewSave).click()
 
-    // await frameWait.waitForSelector(xpaths.ConnectedTVCreateSuccesMSG, xpaths.VisibleState)
+    await frameWait.waitForSelector(xpaths.ConnectedTVCreateSuccesMSG, xpaths.VisibleState)
     
-    // let SuccessMSG = await frame.locator(xpaths.ConnectedTVCreateSuccesMSG).textContent()
-    // if (SuccessMSG != xpaths.SuccesMSG) {
-    //     throw new Error("Success MSG not displayed")
-    // }
+    let SuccessMSG = await frame.locator(xpaths.ConnectedTVCreateSuccesMSG).textContent()
+    if (SuccessMSG != xpaths.SuccesMSG) {
+        throw new Error("Success MSG not displayed")
+    }
 }
 
 export async function CreateTV(page, reportedModel) {
@@ -89,12 +89,12 @@ export async function CreateTV(page, reportedModel) {
     await frame.locator(xpaths.ConnectedTVCreateNewSave).click()
     await page.waitForTimeout(1000);
 
-    // await frameWait.waitForSelector(xpaths.ConnectedTVCreateSuccesMSG, xpaths.VisibleState)
+    await frameWait.waitForSelector(xpaths.ConnectedTVCreateSuccesMSG, xpaths.VisibleState)
     
-    // let SuccessMSG = await frame.locator(xpaths.ConnectedTVCreateSuccesMSG).textContent()
-    // if (SuccessMSG != xpaths.SuccesMSG) {
-    //     throw new Error("Success MSG not displayed")
-    // }
+    let SuccessMSG = await frame.locator(xpaths.ConnectedTVCreateSuccesMSG).textContent()
+    if (SuccessMSG != xpaths.SuccesMSG) {
+        throw new Error("Success MSG not displayed")
+    }
 }
 
 export async function Validate(page, reportedModel) {
@@ -147,7 +147,7 @@ export async function Validate(page, reportedModel) {
 
     await frame.locator(xpaths.ConnectedTVRowEdit).click()
     await frameWait.waitForSelector(xpaths.ConnectedTVCreatePlanningName, xpaths.VisibleState)
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(1500)
 
     let Text = await frame.locator(xpaths.ConnectedTVCreatePlanningName).inputValue()
     if (Text != reportedModel.Name) {
@@ -409,7 +409,7 @@ export async function Enable(page, reportedModel) {
 
     await frame.locator(xpaths.ConnectedTVRowLaunch).click()
     await frame.locator(xpaths.ConnectedTVRowConfirm).click()
-    await page.waitForTimeout(1500)
+    await page.waitForTimeout(2000)
 
     text = await frame.locator(xpaths.ConnectedTVRowStatus).textContent()
     if (text != xpaths.StatusStarting) {
