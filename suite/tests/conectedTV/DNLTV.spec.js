@@ -8,6 +8,7 @@ const config = require('../../../config/config')
 DNLTVModel.Name = config.prefixGauss + Date.now()
 
 test('Test DNLTV', async ({page}) => {
+    test.setTimeout(config.timeout)
     await test.step("Login", async () => {
         await Login(page, config);
     })
@@ -19,7 +20,7 @@ test('Test DNLTV', async ({page}) => {
         await CreateSimulator(page, DNLTVModel);
     })
 
-    await test.step("Log Out", async () => {
-        await Logout(page);
-    })
+    // await test.step("Log Out", async () => {
+    //     await Logout(page);
+    // })
 })

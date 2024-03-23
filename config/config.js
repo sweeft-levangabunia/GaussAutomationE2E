@@ -1,11 +1,11 @@
 const config = {
-    domain: "https://dev.ms1222.net",
+    domain: "https://iberdrola.gaussplatform.com",
     timeout: 900000,
     displayHeight: 700,
     displayWidth: 1500,
     prefixGauss: "e2eAutomation",
     testUserLogin: "levani.gabunia@makingscience.com",
-    testUserPassword: "test1234",
+    testUserPassword: "Test@12345",
     testUserName: "levani.gabunia@makingscience.com",
 }
 

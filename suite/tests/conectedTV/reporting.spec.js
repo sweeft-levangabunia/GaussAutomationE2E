@@ -1,7 +1,7 @@
 import {test} from '@playwright/test';
 import {Login, Logout} from "../../../actions/user/login";
 import {Open, CreatePlanning, CreateTV, Validate, ValidateDashboards,
-    UpdatePlanning, UpdateTV, Enable, Disable, Delete} from "../../../actions/connectedTV/reporting";
+            UpdatePlanning, UpdateTV, Enable, Disable, Delete} from "../../../actions/connectedTV/reporting";
 import {Open as dnlOpen} from "../../../actions/connectedTV/DNLTV";
 import {ReportingModel, UpdatedReportingModel} from "../../../models/connectedTV/reporting";
 
@@ -26,7 +26,7 @@ test('Test Reporter', async ({page}) => {
         await CreateTV(page, ReportingModel);
     })
     await test.step("Reporter Validate Creates", async () => {
-        await dnlOpen(page)
+        await page(page)
         await Open(page)
         await Validate(page, ReportingModel);
     })
